@@ -1,1 +1,1 @@
-# Lawctopus
+# Lawctopus Course Landing Page
