@@ -6,23 +6,18 @@ import {
   Calendar,
   CircleCheckBig,
   PlayCircle,
+  Download,
   Star,
   Users,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import CountUp from "react-countup";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden">
-      {/* background */}
-
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-orange-500/10 blur-3xl" />
-        <div className="absolute right-0 bottom-0 h-[350px] w-[350px] rounded-full bg-amber-400/10 blur-3xl" />
-      </div>
-
+    <section className="relative overflow-hidden pt-10" id="home">
       <div className="container mx-auto px-6 py-20 lg:py-28">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* LEFT */}
@@ -34,18 +29,14 @@ export default function Hero() {
               duration: 0.6,
             }}
           >
-            <Badge className="mb-6 rounded-full border-orange-200 bg-orange-100 px-4 py-2 text-orange-700">
-              6-Month LIVE Program
-            </Badge>
-
-            <h1 className="text-4xl leading-tight font-bold tracking-tight md:text-5xl xl:text-7xl">
+            <h1 className="text-5xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
               Master Contract Drafting
-              <span className="block bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+              <span className="block bg-orange-400 bg-clip-text pb-4 text-transparent">
                 & Earn Through Freelancing
               </span>
             </h1>
 
-            <p className="text-muted-foreground mt-6 max-w-2xl text-lg md:text-xl">
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
               Learn to draft
               <strong> 24+ high-demand agreements</strong>, work with industry
               experts, build your Upwork profile, and become a confident
@@ -54,7 +45,7 @@ export default function Hero() {
 
             {/* metrics */}
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            {/* <div className="mt-8 flex flex-wrap gap-3">
               {[
                 "54 LIVE Sessions",
                 "24+ Contracts",
@@ -70,39 +61,49 @@ export default function Hero() {
                   <span className="text-sm font-medium">{item}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* CTA */}
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button size="lg" className="h-12 px-8">
+              <Button size="lg" className="h-12 cursor-pointer px-8 text-lg">
                 Enroll Now
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-              <Button variant="outline" size="lg" className="h-12">
-                <PlayCircle className="mr-2 h-4 w-4" />
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-12 cursor-pointer text-lg"
+              >
+                <Download className="mr-2 h-4 w-4" />
                 Download Brochure
               </Button>
             </div>
 
             {/* social proof */}
 
-            <div className="mt-10 flex flex-wrap gap-5 sm:gap-8">
+            <div className="mt-10 flex items-stretch gap-5 sm:gap-8">
               <div>
-                <p className="text-2xl font-bold">20,000+</p>
-                <span className="text-muted-foreground text-sm">
+                <p className="text-2xl font-bold">
+                  <CountUp autoAnimate end={20000} duration={2} decimals={0} />+
+                </p>
+                <p className="text-muted-foreground text-sm">
                   Learners Trained
-                </span>
+                </p>
               </div>
+              <div className="my-2 border-l-2 border-neutral-400" />
               <div>
-                <p className="text-2xl font-bold">93.2%</p>
-                <span className="text-muted-foreground text-sm">
-                  Avg Rating
-                </span>
+                <p className="text-2xl font-bold">
+                  <CountUp autoAnimate end={93.2} duration={2} decimals={1} />%
+                </p>
+                <p className="text-muted-foreground text-sm">Avg Rating</p>
               </div>
+              <div className="my-2 border-l-2 border-neutral-400" />
               <div>
-                <p className="text-2xl font-bold">1000+</p>
-                <span className="text-muted-foreground text-sm">Reviews</span>
+                <p className="text-2xl font-bold">
+                  <CountUp autoAnimate end={1000} duration={2} decimals={0} />+
+                </p>
+                <p className="text-muted-foreground text-sm">Reviews</p>
               </div>
             </div>
           </motion.div>
@@ -115,7 +116,7 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.7 }}
             className="max-w-full"
           >
-            <div className="bg-background rounded-3xl border p-5 sm:p-8 shadow-xl">
+            <div className="bg-background rounded-3xl border p-5 shadow-xl sm:p-8">
               <Badge className="mb-5">Limited Seats</Badge>
 
               <div className="flex items-center gap-3">
@@ -147,9 +148,16 @@ export default function Hero() {
                   title="Freelancing Training"
                   desc="Upwork • LinkedIn • Fiverr"
                 />
+                <Feature
+                  icon={<CircleCheckBig />}
+                  title="24+ Contracts"
+                  desc="Hands-on realworld Contracts"
+                />
               </div>
 
-              <Button className="mt-8 h-12 w-full">Reserve Your Seat</Button>
+              <Button className="text-md mt-8 h-12 w-full">
+                Reserve Your Seat
+              </Button>
 
               <p className="text-muted-foreground mt-4 text-center text-xs">
                 100% Money Back Guarantee
@@ -173,12 +181,12 @@ function Feature({
 }) {
   return (
     <div className="flex gap-4">
-      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-100 text-orange-500">
+      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-100 text-orange-700">
         {icon}
       </div>
       <div>
-        <p className="font-semibold">{title}</p>
-        <p className="text-muted-foreground text-sm">{desc}</p>
+        <p className="text-lg font-semibold">{title}</p>
+        <p className="text-muted-foreground -mt-1 text-sm">{desc}</p>
       </div>
     </div>
   );

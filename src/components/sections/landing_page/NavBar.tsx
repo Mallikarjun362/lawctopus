@@ -7,8 +7,17 @@ import { ArrowRight, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { Button } from "@/components/ui/button";
+import ScrollProgress from "./ScrollProgress";
+import { ThemeToggle } from "./toggle_theme_button/Premium";
 
-const nav = ["Curriculum", "Faculty", "Bonuses", "Pricing", "FAQ"];
+const nav = [
+  { title: "Why Us?", id: "benifits" },
+  { title: "Curriculum", id: "curriculum" },
+  { title: "Faculty", id: "faculty" },
+  { title: "Bonuses", id: "bonuses" },
+  { title: "Pricing", id: "pricing" },
+  { title: "FAQ", id: "faq" },
+];
 
 export default function Navbar() {
   return (
@@ -16,36 +25,38 @@ export default function Navbar() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.4 }}
-      className="bg-background/80 fixed inset-x-0 top-0 z-50 border-b backdrop-blur-xl"
+      className="bg-background/80 fixed inset-x-0 top-0 z-50 border-b shadow-sm backdrop-blur-xl"
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-6">
         {/* logo */}
-
-        <Link href="/" className="">
+        <a href="/#home" className="py-3">
           <div className="flex items-end">
-            <div className="-bg-orange-200 -p-1 flex h-10 w-10 items-center justify-center rounded-xl text-sm font-bold text-white">
+            <div className="-bg-orange-200 -p-1 flex h-9 w-9 items-center justify-center rounded-xl text-sm font-bold text-white">
               <img src="https://cdn.lawctopus.com/wp-content/uploads/2019/10/cropped-Favicons-03.png" />
             </div>
-            <h2 className="m-font-normal -mb-2 -ml-2.5 text-[28px] font-semibold tracking-wide">
+            <h2 className="m-font-normal -mb-2 -ml-2.5 text-[24px] font-semibold tracking-wide">
               <span className="text-[#F6A01E]">aw</span>
               <span className="tracking-tighter">ctopus</span>
             </h2>
           </div>
-          <p className="pl-3 text-center text-xs tracking-wide">The Home of Legal Careers</p>
-        </Link>
+          <p className="pl-3 text-center text-xs tracking-wide">
+            The Home of Legal Careers
+          </p>
+        </a>
 
         {/* desktop */}
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {nav.map((item) => (
+          {nav.map((item, idx) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
+              key={idx}
+              href={`#${item.id}`}
+              className="text-muted-foreground/70 text-[16px] font-bold transition-colors hover:text-muted-foreground"
             >
-              {item}
+              {item.title}
             </a>
           ))}
+          <ThemeToggle key="abc" />
         </nav>
 
         {/* desktop cta */}
@@ -53,14 +64,13 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <div className="text-right">
             <p className="text-muted-foreground text-xs">Starting At</p>
-
             <p className="font-semibold">₹24,999</p>
           </div>
 
-          <Button>
+          <button className="flex cursor-pointer items-center rounded-full bg-black px-4 py-2 text-[14px] text-white">
             Enroll Now
             <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          </button>
         </div>
 
         {/* mobile */}
@@ -71,14 +81,16 @@ export default function Navbar() {
           </SheetTrigger>
 
           <SheetContent>
-            <div className="mx-5 mt-12 space-y-6">
-              {nav.map((item) => (
+            <div className="mx-5 mt-12 space-y-3">
+              <ThemeToggle key="theme-toggle" />
+              <br />
+              {nav.map((item, idx) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={idx}
+                  href={`#${item.id}`}
                   className="block text-lg font-medium"
                 >
-                  {item}
+                  {item.title}
                 </a>
               ))}
 
@@ -86,6 +98,7 @@ export default function Navbar() {
             </div>
           </SheetContent>
         </Sheet>
+        <ScrollProgress />
       </div>
     </motion.header>
   );

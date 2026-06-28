@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Lawctopus - Home",
   description: "Expert Course on Mastering Contract Drafting and Freelancing",
 };
+
+import {
+  geistMono,
+  geistSans,
+  inter,
+  manrope,
+  jakarta,
+  dmSans,
+  outfit,
+  urbanist,
+  space,
+} from "./fonts";
+import { Providers } from "./providers";
 
 export default function RootLayout({
   children,
@@ -23,11 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={`h-full antialiased dark`} suppressHydrationWarning>
+      <body
+        className={`flex min-h-full flex-col ${inter.variable} ${manrope.variable} ${jakarta.variable} ${dmSans.variable} ${outfit.variable} ${urbanist.variable} ${space.variable} ${geistSans.variable} ${geistMono.variable}`}
+      >
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }

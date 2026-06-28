@@ -56,7 +56,7 @@ const benefits = [
 
 export default function Benefits() {
   return (
-    <section className="py-24">
+    <section className="py-24" id="benifits">
       <div className="container mx-auto px-6">
         {/* heading */}
 
@@ -65,16 +65,14 @@ export default function Benefits() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center space-y-10"
+          className="mx-auto max-w-3xl text-center space-y-3"
         >
           <p className="inline-flex rounded-full border px-4 py-2 text-sm font-medium">
             Why Students Choose This Course
           </p>
-
           <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
             Learn Skills That Translate Into Opportunities
           </h2>
-
           <p className="text-muted-foreground text-lg">
             Go beyond theory and build practical expertise that helps you draft
             contracts, freelance, network effectively, and accelerate your legal

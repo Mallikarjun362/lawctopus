@@ -2,17 +2,31 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 export default function StickyCTA() {
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const hero = document.getElementById("home");
+    if (!hero) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShow(!entry.isIntersecting);
+      },
+      { threshold: 0.2 },
+    );
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
   return (
     <motion.div
       initial={{ y: 120 }}
       animate={{ y: 0 }}
       transition={{ delay: 0.4, duration: 0.5 }}
-      className="sticky bottom-4 w-[95%] max-w-5xl mx-auto mb-10"
+      className={`sticky ${show ? "bottom-4 opacity-100" : "-bottom-100 opacity-0"} duration-700 mx-auto mb-10 w-[95%] max-w-5xl`}
     >
-      <div className="bg-background/95 rounded-2xl border px-5 py-3 sm:px-5 sm:py-4 shadow-2xl backdrop-blur-xl" >
-        <div className="flex flex-col gap-2 sm:gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="bg-background/95 rounded-2xl border px-5 py-3 shadow-2xl backdrop-blur-xl sm:px-5 sm:py-4">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           {/* left */}
           <div>
             <div className="flex items-center gap-2">

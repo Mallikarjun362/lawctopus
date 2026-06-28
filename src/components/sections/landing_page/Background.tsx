@@ -39,53 +39,63 @@ function BG3() {
 export function BGAnimated() {
   return (
     <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-      {/* Blob 1 */}
-
       <motion.div
         animate={{
-          x: [0, 80, 0],
-          y: [0, -60, 0],
-          scale: [1, 1.3, 1],
+          x: [0,   50,0],
+          y: [0, 300, 0],
+          scale: [1, 1.2, 1],
         }}
-        transition={{
-          duration: 16,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute -top-48 -left-48 h-[800px] w-[800px] rounded-full bg-orange-500/20 blur-[130px]"
+        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-10 left-10 h-[500px] w-[500px] rounded-full bg-orange-500/20 blur-[100px]"
       />
-
-      {/* Blob 2 */}
-
       <motion.div
         animate={{
-          x: [0, -100, 0],
-          y: [0, 70, 0],
-          scale: [1, 1.3, 1],
+          x: [0, 0, 200, 0],
+          y: [0, -200, -300, 0],
+          scale: [0.7, 1.1, 0.7],
         }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="absolute top-1/3 -right-40 h-[700px] w-[700px] rounded-full bg-amber-400/20 blur-[130px]"
+        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-2/3 -right-10 h-[600px] w-[600px] rounded-full bg-red-500/20 blur-[100px]"
       />
-
-      {/* Blob 3 */}
-
       <motion.div
         animate={{
-          x: [0, 120, 0],
+          x: [0, 300, 0],
           y: [0, -80, 0],
           rotate: [0, 15, 0],
           scale: [1, 1.3, 1],
         }}
-        transition={{
-          duration: 24,
-          repeat: Infinity,
-          ease: "easeInOut",
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute bottom-[-300px] left-[10%] h-[600px] w-[600px] rounded-full bg-pink-500/20 blur-[100px]"
+      />
+      <motion.div
+        animate={{
+          x: [0, 300, 0],
+          y: [0, -80, 0],
+          rotate: [0, 15, 0],
+          scale: [1, 1.3, 1],
         }}
-        className="absolute bottom-[-300px] left-[30%] h-[600px] w-[600px] rounded-full bg-orange-300/20 blur-[130px]"
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[-300px] right-[10%] h-[600px] w-[600px] rounded-full bg-yellow-500/20 blur-[100px]"
+      />
+      <motion.div
+        animate={{
+          x: [0, 300, 0],
+          y: [0, -80, 0],
+          rotate: [0, 15, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[-300px] left-50%] h-[600px] w-[600px] rounded-full bg-green-500/20 blur-[100px]"
+      />
+      <motion.div
+        animate={{
+          x: [0, 300, 0],
+          y: [0, -80, 0],
+          rotate: [0, 15, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-[30%] left-[30%] h-[600px] w-[600px] rounded-full bg-blue-500/20 blur-[100px]"
       />
     </div>
   );

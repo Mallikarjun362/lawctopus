@@ -70,7 +70,7 @@ export default function Bonuses() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl space-y-10 text-center"
+          className="mx-auto max-w-3xl space-y-3 text-center"
         >
           <span className="inline-flex rounded-full border px-4 py-2 text-sm font-medium">
             Bonuses Included
@@ -85,7 +85,7 @@ export default function Bonuses() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-7 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {bonuses.map((bonus, index) => {
             const Icon = bonus.icon;
 
@@ -103,7 +103,7 @@ export default function Bonuses() {
                   <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-orange-100">
                     <Icon className="h-6 w-6 text-orange-600" />
                   </div>
-                  <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700">
+                  <span className="rounded-full bg-green-100/20 px-3 py-1 text-xs font-medium text-green-400">
                     {bonus.value}
                   </span>
                 </div>
@@ -123,9 +123,9 @@ export default function Bonuses() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="mt-20"
+          className="mt-2"
         >
-          <div className="rounded-3xl border bg-orange-50 p-10 text-center">
+          <div className="p-10 text-center backdrop-blur-xl">
             <p className="text-sm font-semibold tracking-wide text-orange-600 uppercase">
               Included At No Extra Cost
             </p>

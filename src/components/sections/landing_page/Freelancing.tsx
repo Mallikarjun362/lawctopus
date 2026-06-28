@@ -66,7 +66,7 @@ export default function Freelancing() {
       </div>
 
       <div className="container mx-auto px-6">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid gap-16 lg:grid-cols-2">
           {/* left */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -98,8 +98,7 @@ export default function Freelancing() {
                 "Career Coaching",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <BadgeCheck className="h-5 w-5 text-orange-500" />
-
+                  <BadgeCheck className="h-5 w-5 text-green-500" />
                   <span className="text-muted-foreground">{item}</span>
                 </div>
               ))}

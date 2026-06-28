@@ -160,7 +160,7 @@ export default function Faculty() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mx-auto max-w-3xl text-center space-y-10"
+            className="mx-auto max-w-3xl text-center space-y-1"
           >
             <span className="inline-flex rounded-full border px-4 py-2 text-sm font-medium">
               Learn From Practitioners
@@ -173,7 +173,7 @@ export default function Faculty() {
               practitioners who work with these agreements daily.
             </p>
           </motion.div>
-          <div className="mt-16 grid gap-6 md:grid-cols-3 xl:grid-cols-4">
+          <div className="mt-7 grid gap-6 md:grid-cols-3 xl:grid-cols-4">
             {faculty
               .slice(0, showMore ? faculty.length : 4)
               .map((person, index) => {

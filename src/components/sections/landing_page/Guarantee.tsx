@@ -23,7 +23,8 @@ export default function Guarantee() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-6xl overflow-hidden rounded-[32px] border bg-gradient-to-br from-white/80 to-background/0 backdrop-blur-3xl shadow-lg"
+          // className="mx-auto max-w-6xl overflow-hidden rounded-[32px] bg-gradient-to-br from-white/80 to-background/0 backdrop-blur-3xl shadow-lg"
+          className="max-w-6xl mx-auto rounded-[32px] bg-gradient-to-br from-orange-50/50 to-background/50 overflow-hidden"
         >
           <div className="grid lg:grid-cols-2">
             {/* Left */}
@@ -47,10 +48,10 @@ export default function Guarantee() {
 
             {/* Right */}
 
-            <div className="bg-background/60 border-t p-5 sm:p-10 lg:border-t-0 lg:border-l lg:p-14">
+            <div className="bg-background/40 border-t p-5 sm:p-10 lg:border-t-0 lg:border-l lg:p-14">
               <h3 className="text-xl font-semibold">Eligibility Criteria</h3>
 
-              <div className="mt-6 space-y-5">
+              <div className="mt-6 space-y-3">
                 {conditions.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <BadgeCheck className="mt-0.5 h-5 w-5 text-green-600" />

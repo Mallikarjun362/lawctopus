@@ -1,4 +1,11 @@
-import { BriefcaseBusiness, Building2, FileText, Globe2, Scale, ShieldCheck } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  Building2,
+  FileText,
+  Globe2,
+  Scale,
+  ShieldCheck,
+} from "lucide-react";
 
 export const curriculum_full_v1 = [
   {
@@ -28,7 +35,7 @@ export const curriculum_full_v1 = [
       "Signatures & Witnesses",
       "Contract Lab",
       "Clause Drafting Exercise",
-      "Assignment Feedback"
+      "Assignment Feedback",
     ],
   },
 
@@ -48,7 +55,7 @@ export const curriculum_full_v1 = [
       "Personalized Feedback",
       "Execution Process",
       "Contract Strategy",
-      "Lawyer's Role in Negotiations"
+      "Lawyer's Role in Negotiations",
     ],
   },
 
@@ -72,7 +79,7 @@ export const curriculum_full_v1 = [
       "Professional Branding",
       "Career Development",
       "Shareholders Agreement Drafting",
-      "JV Agreement Drafting"
+      "JV Agreement Drafting",
     ],
   },
 
@@ -97,7 +104,7 @@ export const curriculum_full_v1 = [
       "Cover Letter Drafting",
       "Upwork Fundamentals",
       "Freelancing Strategies",
-      "Freelancing Bonus Sessions"
+      "Freelancing Bonus Sessions",
     ],
   },
 
@@ -122,7 +129,7 @@ export const curriculum_full_v1 = [
       "Fiverr Profile Creation",
       "Freelancing Marketplace Strategies",
       "Trademark Drafting Assignment",
-      "SaaS Drafting Assignment"
+      "SaaS Drafting Assignment",
     ],
   },
 
@@ -146,7 +153,14 @@ export const curriculum_full_v1 = [
       "Career Networking",
       "Closing Session",
       "Franchise Agreement Drafting",
-      "POA Drafting Assignment"
+      "POA Drafting Assignment",
     ],
   },
-];
+] as const satisfies ICurriculumMonth[];
+
+export interface ICurriculumMonth {
+  month: string;
+  title: string;
+  icon: React.ElementType;
+  topics: string[];
+}

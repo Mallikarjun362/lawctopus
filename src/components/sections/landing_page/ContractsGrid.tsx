@@ -101,7 +101,7 @@ export default function ContractsGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center space-y-10"
+          className="mx-auto max-w-3xl text-center space-y-3"
         >
           <span className="inline-flex rounded-full border px-4 py-2 text-sm font-medium">
             Draft 24+ Agreements
@@ -117,7 +117,7 @@ export default function ContractsGrid() {
 
         {/* grid */}
 
-        <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {contracts.map((contract, index) => {
             const Icon = contract.icon;
             return (

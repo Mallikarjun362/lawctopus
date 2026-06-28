@@ -40,7 +40,7 @@ export default function Footer() {
                 Become Industry Ready In Contract Drafting
               </h2>
 
-              <p className="mt-4 max-w-2xl text-orange-100">
+              <p className="mt-4 max-w-2xl text-white/70">
                 Learn practical drafting, freelancing, negotiation, client
                 acquisition and build a portfolio that helps you stand out.
               </p>
@@ -60,26 +60,22 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
           {/* brand */}
 
-          <div className="space-y-4 lg:col-span-2">
-            <h3 className="text-2xl font-bold">Lawctopus</h3>
-
+          <div className="space-y-4 lg:col-span-2 text-lg">
+            <h3 className="text-3xl font-bold">Lawctopus</h3>
             <div className="max-w-sm">
               <p>Lawctopus, 2nd Floor, Seat No. 17,</p>
               <p>Sector 35B, S.C.O 339-340,</p>
               <p>Chandigarh (U.T.) - 160022, India</p>
             </div>
-
             <div>
               <b>Hours:</b> 11 AM - 7 PM (Mon-Fri)
             </div>
-
             <p className="text-muted-foreground max-w-sm">
               Practical legal education designed for students, lawyers,
               freelancers and professionals.
             </p>
-
-            <div className="flex gap-4">
-              <Social icon={Mail} href="mailto:contact@lawctopus.com"/>
+            <div className="flex flex-wrap gap-4">
+              <Social icon={Mail} href="mailto:courses@lawctopus.com"/>
               <Social icon={BsFacebook} href="https://www.facebook.com/lawctopus/"/>
               <Social icon={BsTwitter} href="https://www.twitter.com/lawctopus"/>
               <Social icon={BsYoutube} href="https://www.youtube.com/channel/UC6fghSCgphfU1U4FfRF7pSg"/>
@@ -99,17 +95,15 @@ export default function Footer() {
 
         <div className="text-muted-foreground mt-12 flex flex-col gap-4 border-t pt-8 text-sm md:flex-row md:justify-between">
           <span>© 2026 Lawctopus. All rights reserved.</span>
-
-          <div className="flex flex-wrap gap-4">
-            <span className="flex items-center gap-2 whitespace-nowrap">
+          <div className="flex flex-wrap gap-4 text-md text-muted-foreground">
+            <Link href="tel:9023543927" className="flex items-center gap-2 whitespace-nowrap hover:text-black duration-300">
               <Phone className="h-4 w-4" />
               +91 90235 43927
-            </span>
-
-            <span className="flex items-center gap-2">
+            </Link>
+            <Link href="mailto:courses@lawctopus.com" className="flex items-center gap-2 hover:text-black duration-300">
               <Mail className="h-4 w-4" />
-              contact@lawctopus.com
-            </span>
+              courses@lawctopus.com
+            </Link>
           </div>
         </div>
       </section>
@@ -120,14 +114,13 @@ export default function Footer() {
 function FooterColumn({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
-      <h4 className="font-semibold">{title}</h4>
-
-      <div className="mt-5 space-y-3">
+      <h4 className="font-semibold text-xl">{title}</h4>
+      <div className="mt-3 space-y-1.5">
         {items.map((item) => (
           <Link
             key={item}
             href="#"
-            className="text-muted-foreground hover:text-foreground block text-sm transition-colors"
+            className="text-muted-foreground text-lg hover:text-foreground block transition-colors"
           >
             {item}
           </Link>
@@ -142,7 +135,7 @@ function Social({ icon: Icon, href="#" }: { icon: React.ElementType, href?: stri
     <Link
       href={href}
       target="_blank"
-      className="hover:bg-background flex h-10 w-10 items-center justify-center rounded-xl border transition-colors group/card"
+      className="bg-background/90 hover:bg-background flex h-10 w-10 items-center justify-center rounded-xl border-2 border-neutral-300 transition-colors group/card"
     >
       <Icon className="h-4 w-4 group-hover/card:scale-110 duration-300" />
     </Link>

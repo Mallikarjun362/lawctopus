@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -46,21 +47,21 @@ export default function FAQ() {
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mx-auto max-w-3xl text-center space-y-10"
+          className="mx-auto max-w-3xl space-y-3 text-center"
         >
           <span className="inline-flex rounded-full border px-4 py-2 text-sm font-medium">
             Frequently Asked Questions
           </span>
-
           <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
             Everything You Need To Know
           </h2>
-
-          <p className="text-muted-foreground text-lg">
+          <p className="text-lg text-muted-foreground">
             Still have questions? We've answered the most common queries
             learners ask before enrolling.
           </p>
         </motion.div>
+
+        {/* questions */}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -69,18 +70,17 @@ export default function FAQ() {
           transition={{ delay: 0.15 }}
           className="mx-auto mt-16 max-w-4xl"
         >
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="multiple" className="space-y-4">
             {faqs.map(({ q, a }, i) => (
               <AccordionItem
                 key={i}
                 value={`item-${i}`}
-                className="bg-background rounded-2xl border px-6"
+                className="bg-background rounded-xl border px-6"
               >
-                <AccordionTrigger className="text-left text-base font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left text-xl font-semibold hover:no-underline">
                   {q}
                 </AccordionTrigger>
-
-                <AccordionContent className="text-muted-foreground leading-7">
+                <AccordionContent className="text-lg leading-7 text-muted-foreground">
                   {a}
                 </AccordionContent>
               </AccordionItem>
@@ -95,19 +95,15 @@ export default function FAQ() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.25 }}
-          className="mt-14"
+          className="mt-1"
         >
-          <div className="mx-auto max-w-4xl rounded-3xl border bg-orange-50 p-8 text-center">
-            <h3 className="text-2xl font-semibold">Still Have Questions?</h3>
-
-            <p className="text-muted-foreground mt-3">
-              Speak with our admissions team to understand whether this program
-              aligns with your career goals.
-            </p>
-
-            <button className="bg-primary text-primary-foreground mt-6 rounded-xl px-6 py-3 font-medium">
-              Talk To An Advisor
-            </button>
+          <div className="mx-auto max-w-4xl space-y-5 p-8 text-center">
+            <Link
+              href="mailto:courses@lawctopus.com"
+              className="text-black block rounded-xl px-5 md:px-10 py-3 font-medium border border-neutral-500 hover:border-black duration-200"
+            >
+              Still Have Questions? Email us
+            </Link>
           </div>
         </motion.div>
       </div>

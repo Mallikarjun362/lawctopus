@@ -11,9 +11,9 @@ import Testimonials from "@/components/sections/landing_page/Testimonials";
 import Pricing from "@/components/sections/landing_page/Pricing";
 import Guarantee from "@/components/sections/landing_page/Guarantee";
 import FAQ from "@/components/sections/landing_page/FAQ";
-import StickyCTA from "@/components/sections/landing_page/StickyCTA";
 import Footer from "@/components/sections/landing_page/Footer";
 import { Background } from "@/components/sections/landing_page/Background";
+import StickyCTA from "@/components/sections/landing_page/StickyCTA";
 
 export default function Home() {
   return (
