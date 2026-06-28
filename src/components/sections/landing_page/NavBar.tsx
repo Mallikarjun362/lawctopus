@@ -46,22 +46,24 @@ export default function Navbar() {
 
         {/* desktop */}
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center lg:flex lg:gap-5 xl:gap-8">
           {nav.map((item, idx) => (
             <a
               key={idx}
               href={`#${item.id}`}
-              className="text-muted-foreground/70 text-[16px] font-bold transition-colors hover:text-muted-foreground"
+              className="text-muted-foreground/70 hover:text-muted-foreground text-[16px] font-bold transition-colors"
             >
               {item.title}
             </a>
           ))}
-          <ThemeToggle key="abc" />
         </nav>
 
         {/* desktop cta */}
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex">
+          <div className="mr-5">
+            <ThemeToggle key="abc" />
+          </div>
           <div className="text-right">
             <p className="text-muted-foreground text-xs">Starting At</p>
             <p className="font-semibold">₹24,999</p>

@@ -77,7 +77,7 @@ export default function FAQ() {
                 value={`item-${i}`}
                 className="bg-background rounded-xl border px-6"
               >
-                <AccordionTrigger className="text-left text-xl font-semibold hover:no-underline">
+                <AccordionTrigger className="text-left text-md md:text-xl font-semibold hover:no-underline">
                   {q}
                 </AccordionTrigger>
                 <AccordionContent className="text-lg leading-7 text-muted-foreground">
@@ -100,7 +100,7 @@ export default function FAQ() {
           <div className="mx-auto max-w-4xl space-y-5 p-8 text-center">
             <Link
               href="mailto:courses@lawctopus.com"
-              className="text-black block rounded-xl px-5 md:px-10 py-3 font-medium border border-neutral-500 hover:border-black duration-200"
+              className="text-foreground block rounded-xl px-5 md:px-10 py-3 font-medium border border-foreground hover:border-foreground/50 duration-200"
             >
               Still Have Questions? Email us
             </Link>

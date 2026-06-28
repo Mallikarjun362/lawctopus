@@ -29,6 +29,7 @@ export default function Hero() {
               duration: 0.6,
             }}
           >
+            <div className="font-mono tracking-widest mb-4 text-lg text-muted-foreground/80">LAWCTOPUS LAW SCHOOL</div>
             <h1 className="text-5xl font-bold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl">
               Master Contract Drafting
               <span className="block bg-orange-400 bg-clip-text pb-4 text-transparent">

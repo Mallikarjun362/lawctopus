@@ -192,6 +192,8 @@ export default function Faculty() {
                         src={person.image}
                         alt={person.name}
                         fill
+                        sizes="10"
+                        loading="lazy"
                         className="object-cover"
                       />
                     </div>

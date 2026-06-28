@@ -96,7 +96,7 @@ export default function Pricing() {
                   Enroll Now
                 </Button>
 
-                <div className="mt-8 space-y-1 sm:space-y-2">
+                <div className="mt-8 space-y-2 sm:space-y-2">
                   <Feature icon={Clock3} text="6 Months Structured Learning" />
                   <Feature icon={Infinity} text="Lifetime Access" />
                   <Feature icon={Users} text="Mentor Support" />
@@ -127,7 +127,7 @@ export default function Pricing() {
               <div className="bg-muted/30 p-5 sm:p-10 lg:p-12">
                 <h3 className="text-2xl font-semibold">Everything Included</h3>
 
-                <div className="mt-8 space-y-1 sm:space-y-3">
+                <div className="mt-8 space-y-2 sm:space-y-3">
                   {features.map((item) => (
                     <div key={item} className="flex gap-3">
                       <BadgeCheck className="h-5 w-5 text-green-500" />

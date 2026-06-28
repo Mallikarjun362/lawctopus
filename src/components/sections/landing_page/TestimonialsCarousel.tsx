@@ -128,9 +128,9 @@ export default function TestimonialsCarousel() {
                       </div>
 
                       <div className="mt-6 border-t pt-5">
-                        <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-3 py-1">
-                          <BriefcaseBusiness className="h-4 w-4 text-green-600" />
-                          <span className="text-xs font-medium text-green-700">
+                        <div className="inline-flex items-center gap-2 rounded-full bg-green-200 dark:bg-green-500/10 px-3 py-1 text-green-800 dark:text-green-300">
+                          <BriefcaseBusiness className="h-4 w-4" />
+                          <span className="text-xs font-medium">
                             {item.outcome}
                           </span>
                         </div>

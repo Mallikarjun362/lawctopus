@@ -62,7 +62,7 @@ export default function Footer() {
 
           <div className="space-y-4 lg:col-span-2 text-lg">
             <h3 className="text-3xl font-bold">Lawctopus</h3>
-            <div className="max-w-sm">
+            <div className="max-w-sm -space-y-1">
               <p>Lawctopus, 2nd Floor, Seat No. 17,</p>
               <p>Sector 35B, S.C.O 339-340,</p>
               <p>Chandigarh (U.T.) - 160022, India</p>
@@ -70,10 +70,10 @@ export default function Footer() {
             <div>
               <b>Hours:</b> 11 AM - 7 PM (Mon-Fri)
             </div>
-            <p className="text-muted-foreground max-w-sm">
+            {/* <p className="text-muted-foreground max-w-sm">
               Practical legal education designed for students, lawyers,
               freelancers and professionals.
-            </p>
+            </p> */}
             <div className="flex flex-wrap gap-4">
               <Social icon={Mail} href="mailto:courses@lawctopus.com"/>
               <Social icon={BsFacebook} href="https://www.facebook.com/lawctopus/"/>
